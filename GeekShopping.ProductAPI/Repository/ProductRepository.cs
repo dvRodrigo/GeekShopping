@@ -23,7 +23,7 @@ namespace GeekShopping.ProductAPI.Repository
 
         public async Task<ProductVO> FindById(long id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products.FindAsync(id) ?? new Model.Product();
             return _mapper.Map<ProductVO>(product);
         }
 
