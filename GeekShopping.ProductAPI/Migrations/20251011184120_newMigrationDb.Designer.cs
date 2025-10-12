@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeekShopping.ProductAPI.Migrations
 {
     [DbContext(typeof(MySqlContext))]
-    [Migration("20251007234812_SeedProductDataTable")]
-    partial class SeedProductDataTable
+    [Migration("20251011184120_newMigrationDb")]
+    partial class newMigrationDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,6 +58,44 @@ namespace GeekShopping.ProductAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("product");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CategoryName = "Roupas",
+                            Description = "Camiseta do curso de ASP.NET Core Web API",
+                            ImageUrl = "https://raw.githubusercontent.com/GeekShopping/GeekShopping/master/Images/Products/camiseta.png",
+                            Name = "Camiseta",
+                            Price = 79.9m
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CategoryName = "Acessórios",
+                            Description = "Caneca do curso de ASP.NET Core Web API",
+                            ImageUrl = "https://raw.githubusercontent.com/GeekShopping/GeekShopping/master/Images/Products/caneca.png",
+                            Name = "Caneca",
+                            Price = 29.9m
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CategoryName = "Roupas",
+                            Description = "Moleton do curso de ASP.NET Core Web API",
+                            ImageUrl = "https://raw.githubusercontent.com/GeekShopping/GeekShopping/master/Images/Products/moletom.png",
+                            Name = "Moleton",
+                            Price = 119.9m
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            CategoryName = "Acessórios",
+                            Description = "Mousepad do curso de ASP.NET Core Web API",
+                            ImageUrl = "https://raw.githubusercontent.com/GeekShopping/GeekShopping/master/Images/Products/mousepad.png",
+                            Name = "Mousepad",
+                            Price = 19.9m
+                        });
                 });
 #pragma warning restore 612, 618
         }
